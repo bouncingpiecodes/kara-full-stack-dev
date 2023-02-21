@@ -1,11 +1,3 @@
-import { Route, Routes, useLocation } from "react-router-dom";
 import React from "react";
-import { useTransition, animated, config, easings } from "react-spring";
-import Header from "./Header";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
-import pageList from "../data/pageList";
+import "../styles/Nav.css";
+import { NavLink } from "react-router-dom";
