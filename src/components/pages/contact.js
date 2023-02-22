@@ -1,100 +1,120 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
+// Here we import a helper function that will check if the email is valid
+import { validateEmail } from "./../../utils/helpers";
 
-export default function Contact() {
-  const form = useRef();
-  const [formName, setName] = useState("");
-  const [formEmail, setEmail] = useState("");
-  const [formMessage, setMessage] = useState("");
-  const [warningMessage, setWarningMessage] = useState("");
+function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [blurError, setBlurError] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const botHider1 = "mailto";
-  const botHider2 = "karafullstack";
-  const botHider3 = "harvey";
-  const botHider4 = "@gma";
-  const botHider5 = "il.c";
-  const botHider6 = "om";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let errorMessage = "";
+    if (!name) {
+      errorMessage = errorMessage + "A name is required. ";
+    }
+    if (!email) {
+      errorMessage = errorMessage + "An email is required. ";
+    }
+    if (!validateEmail(email)) {
+      errorMessage =
+        errorMessage + "Email is invalid, a valid email is required. ";
+    }
+    if (!message) {
+      errorMessage = errorMessage + "A message is required. ";
+    }
+    if (errorMessage) {
+      setError(errorMessage);
+    } else {
+      // submit the form
+    }
+  };
 
-  const sendEmail = (event) => {
-    event.preventDefault();
-
-    if (
-      formName.trim().length === 0 ||
-      formEmail.trim().length === 0 ||
-      formMessage.trim().length === 0
-    ) {
-      setWarningMessage("All fields must be completed!");
-      return;
-    } else setWarningMessage("");
-
-    emailjs
-      .sendForm(
-        "service_6912jgl",
-        "template_nxmathh",
-        form.current,
-        "IIBjjcjGKvHQDurqZ"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setWarningMessage("Email sent!");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (!value) {
+      setBlurError({ ...blurError, [name]: "This field is required." });
+    } else {
+      setBlurError({ ...blurError, [name]: "" });
+    }
   };
 
   return (
-    <div className="m-5 mt-0 mb-0 d-flex flex-column align-items-center align-items-lg-start">
-      <h3>Contact</h3>
-      <p className="border-0">
-        Fill out the form below, or send me a message at{" "}
-        <a
-          href={`${botHider1}:${botHider2}${botHider3}${botHider4}${botHider5}${botHider6}`}
-        >
-          m{/* Hide from Bots */}ax.{/* Hide from Bots */}mcd
-          {/* Hide from Bots */}ono{/* Hide from Bots */}ugh
-          {/* Hide from Bots */}@g{/* Hide from Bots */}ma{/* Hide from Bots */}
-          il.com
-        </a>
-      </p>
-      <form ref={form} onSubmit={sendEmail} className="form-control border-0">
-        <div className="form-group m-2">
-          <label htmlFor="from_name">Name</label>
-          <input
-            name="from_name"
-            type="text"
-            value={formName}
-            onChange={(e) => setName(e.target.value)}
-            className="form-control col-8"
-          />
+    <div>
+      <h3>Contact Me</h3>
+      <div className="row justify-content-center">
+        <div className="col-6">
+          <form onSubmit={handleSubmit}>
+            <div className="form-outline mb-4">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                value={name}
+                onBlur={handleBlur}
+                onChange={(e) => setName(e.target.value)}
+              />
+              {blurError.name && (
+                <div>
+                  <p className="text-danger">{blurError.name}</p>
+                </div>
+              )}
+            </div>
+
+            <div className="form-outline mb-4">
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                name="email"
+                className="form-control"
+                value={email}
+                onBlur={handleBlur}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {blurError.email && (
+                <div>
+                  <p className="text-danger">{blurError.email}</p>
+                </div>
+              )}
+            </div>
+
+            <div className="form-outline mb-4">
+              <label htmlFor="message">Message</label>
+              <input
+                type="textarea"
+                name="message"
+                className="form-control"
+                value={message}
+                onBlur={handleBlur}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              {blurError.message && (
+                <div>
+                  <p className="text-danger">{blurError.message}</p>
+                </div>
+              )}
+            </div>
+
+            <button type="submit" className="btn btn-primary btn-block mb-4">
+              Submit
+            </button>
+            {error && (
+              <div>
+                <p className="text-danger">{error}</p>
+              </div>
+            )}
+          </form>
         </div>
-        <div className="form-group m-2">
-          <label htmlFor="reply_to">Email</label>
-          <input
-            name="reply_to"
-            type="email"
-            value={formEmail}
-            onChange={(e) => setEmail(e.target.value)}
-            className="form-control col-8"
-          />
-        </div>
-        <div className="form-group m-2">
-          <label htmlFor="message">Message</label>
-          <textarea
-            name="message"
-            type="text"
-            value={formMessage}
-            onChange={(e) => setMessage(e.target.value)}
-            className="form-control col-8"
-          ></textarea>
-        </div>
-        <div className="form-group m-2 d-flex flex-row">
-          <input type="submit" value="Send" />
-          <p className="ms-5">{warningMessage}</p>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
+
+export default Contact;

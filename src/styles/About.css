@@ -1,0 +1,15 @@
+#bio-photo {
+  width: 30vw;
+}
+
+@media (min-width: 574px) {
+  #bio-photo {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 992px) {
+  #bio-photo {
+    width: 20vw;
+  }
+}

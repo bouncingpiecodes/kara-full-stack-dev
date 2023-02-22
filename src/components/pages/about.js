@@ -1,7 +1,8 @@
 import React from "react";
 import "../../styles/About.css";
-import karaPhoto from "../../images/";
+import karaPhoto from "./headshot.jpg";
 
+// function for my about me section on portfolio
 export default function About() {
   return (
     <div className="m-5 mt-0 mb-0 d-flex flex-column align-items-center align-items-lg-start">
