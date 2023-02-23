@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // Here we import a helper function that will check if the email is valid
 import { validateEmail } from "./../../utils/helpers";
+import "../../styles/Contact.css";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -46,7 +47,7 @@ function Contact() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h3>Contact Me</h3>
       <div className="row justify-content-center">
         <div className="col-6">

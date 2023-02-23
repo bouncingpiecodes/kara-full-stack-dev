@@ -5,7 +5,7 @@ import "../styles/Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="d-flex justify-content-center">
+    <footer>
       <a
         className="m-2 footer-icon"
         href="https://github.com/bouncingpiecodes"

@@ -1,15 +1,29 @@
-#bio-photo {
-  width: 30vw;
+.about {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (min-width: 574px) {
-  #bio-photo {
-    width: 30vw;
+.about img {
+  max-width: 300px;
+  margin-right: 16px;
+}
+
+.about p {
+  font-size: 24px;
+}
+
+@media (max-width: 700px) {
+  .about {
+    flex-direction: column;
   }
-}
 
-@media (min-width: 992px) {
-  #bio-photo {
-    width: 20vw;
+  .about img {
+    max-width: none;
+    width: 100%;
+  }
+
+  .about p {
+    font-size: 24px;
+    max-width: 100%;
   }
 }

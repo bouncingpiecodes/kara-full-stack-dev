@@ -34,10 +34,7 @@ export default function Container() {
 
   return (
     <div>
-      <div
-        style={{ maxWidth: "99vw" }}
-        className="d-flex flex-column flex-lg-row justify-content-between"
-      >
+      <div className="d-flex flex-column flex-lg-row justify-content-between">
         <Header />
         <Nav pages={pageList} location={location} />
       </div>
@@ -54,7 +51,7 @@ export default function Container() {
           </Routes>
         </animated.div>
       ))}
-      <div style={{ maxWidth: "99vw" }}>
+      <div>
         <Footer />
       </div>
     </div>

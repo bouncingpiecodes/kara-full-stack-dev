@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "ai": "^1.1.0",
+    "assets": "^3.0.1",
     "container": "^0.0.2",
     "emailjs-com": "^3.2.0",
     "footer": "^1.0.0",

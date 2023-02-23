@@ -1,8 +1,9 @@
 import React from "react";
+import "../../styles/Resume.css";
 
 export default function Resume() {
   return (
-    <div className="m-5 mt-0 mb-0 d-flex flex-column align-items-center align-items-lg-start">
+    <div className="container">
       <h2 className="text-center text-lg-start">Resume</h2>
       <br></br>
       <h5>

@@ -1,3 +1,26 @@
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  padding: 8px 32px;
+  margin: 16px;
+}
+
+.portfolio-link {
+  text-decoration: none !important;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .portfolio-img {
   object-fit: cover;
   width: 100%;
@@ -26,7 +49,7 @@
 }
 
 .icon-link {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .portfolio-desc {
