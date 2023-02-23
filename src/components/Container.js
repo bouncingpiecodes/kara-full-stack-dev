@@ -4,10 +4,10 @@ import { useTransition, animated, config, easings } from "react-spring";
 import Header from "./Header";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
+import About from "./pages/About.js";
+import Portfolio from "./pages/Portfolio.js";
+import Contact from "./pages/Contact.js";
+import Resume from "./pages/Resume.js";
 import pageList from "../data/pageList";
 
 export default function Container() {
