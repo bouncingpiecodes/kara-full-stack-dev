@@ -41,13 +41,10 @@ export default function Container() {
       {slideLeftTransition((props, item) => (
         <animated.div style={props} config={config}>
           <Routes location={item}>
-            <Route path="/Development-Portfolio" element={<About />} />
-            <Route path="/Development-Portfolio/work" element={<Portfolio />} />
-            <Route
-              path="/Development-Portfolio/contact"
-              element={<Contact />}
-            />
-            <Route path="/Development-Portfolio/resume" element={<Resume />} />
+            <Route path="/" element={<About />} />
+            <Route path="/work" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </animated.div>
       ))}

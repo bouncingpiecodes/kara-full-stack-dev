@@ -11,7 +11,7 @@ export default function Nav({ pages }) {
             <NavLink
               className="nav-item nav-link"
               activeclassname="nav-item nav-link nav-link-active"
-              to={`/Development-Portfolio/${page.link}`}
+              to={`/${page.link}`}
             >
               {page.name}
             </NavLink>
