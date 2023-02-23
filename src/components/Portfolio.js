@@ -4,6 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 import "../styles/Portfolio.css";
 import whatToWatch from "./whattowatch.png";
+import foundationfinder from "./foundationfinder.png";
 
 export default function Portfolio() {
   // query for screen size for mobile and tablet conditional render
@@ -17,14 +18,9 @@ export default function Portfolio() {
       link: "https://jplaisance41.github.io/What-To-Watch-App/",
     },
     {
-      title: "What To Watch",
-      image: whatToWatch,
-      link: "https://jplaisance41.github.io/What-To-Watch-App/",
-    },
-    {
-      title: "What To Watch",
-      image: whatToWatch,
-      link: "https://jplaisance41.github.io/What-To-Watch-App/",
+      title: "Foundation Finder",
+      image: foundationfinder,
+      link: "https://foundation-finder.herokuapp.com/login",
     },
   ];
 
