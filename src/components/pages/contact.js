@@ -48,8 +48,9 @@ function Contact() {
 
   return (
     <div className="container">
-      <h3>Contact Me</h3>
-      <div className="row justify-content-center">
+      <h2>Contact Me</h2>
+      Email: <a href="mailto:bouncingpie@icloud.com">bouncingpie@icloud</a>
+      {/* <div className="row justify-content-center">
         <div className="col-6">
           <form onSubmit={handleSubmit}>
             <div className="form-outline mb-4">
@@ -113,7 +114,7 @@ function Contact() {
             )}
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
