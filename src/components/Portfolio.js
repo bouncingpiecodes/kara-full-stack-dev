@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { useMediaQuery } from "react-responsive";
 
-import "../../styles/Portfolio.css";
+import "../styles/Portfolio.css";
 import whatToWatch from "./whattowatch.png";
 
 export default function Portfolio() {

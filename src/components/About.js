@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/About.css";
+import "../styles/About.css";
 import karaPhoto from "./headshot.jpg";
 
 // function for my about me section on portfolio
