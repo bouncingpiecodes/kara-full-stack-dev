@@ -11,12 +11,13 @@ export default function About() {
         <img id="bio-photo" src={karaPhoto} alt="pic of kara" />
         <div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.{" "}
+            I am a seasoned house project manager and Junior front end
+            developer. I have a background in hospitality, sales, and customer
+            service. I am excited to venture out into the exciting world of Tech
+            as a front-end web developer. I am currently enrolled in the Georgia
+            Tech Full Stack coding bootcamp where I am learning Javascript,
+            MySql, and react to name a few. I am a team player who thrives in
+            groups and loves to take charge when needed.{" "}
           </p>
         </div>
       </div>
